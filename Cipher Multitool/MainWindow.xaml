@@ -82,7 +82,7 @@
 
             <!-- Text boxes for input/output text -->
             <TextBox Name="inputTextBox" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextChanged="InputTextBox_TextChanged">
-                Insert text here.
+                Insert input text here.
             </TextBox>
 
             <TextBox Grid.Row="2"  Name="outputTextBox" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto">
