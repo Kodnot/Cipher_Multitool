@@ -10,6 +10,7 @@ namespace Cipher_Multitool
     {
         static Dictionary<char, char> LetterMapping_lower = new Dictionary<char, char>();
         static Dictionary<char, char> LetterMapping_upper = new Dictionary<char, char>();
+        static bool DictionariesSet = false;
 
         static public string Encode(string input, string inputKey)
         {
@@ -28,6 +29,7 @@ namespace Cipher_Multitool
 
         static public string Decode(string input, string inputKey)
         {
+            SetDictionaries();
             string output = "";
             Key key = new Key(inputKey);
             foreach (char i in input)
@@ -60,6 +62,9 @@ namespace Cipher_Multitool
 
         static void SetDictionaries()
         {
+            if (DictionariesSet)
+                return;
+
             int index = 0;
             //ASCII 71 = G; 71+26 = 97 = a
             for (char x = 'G'; x < 'a'; x++)
@@ -96,6 +101,8 @@ namespace Cipher_Multitool
                 LetterMapping_upper[x] = (char)('A' + (char)index);
                 index++;
             }
+
+            DictionariesSet = true;
         }
     }
 
