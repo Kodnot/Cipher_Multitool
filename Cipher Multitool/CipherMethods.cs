@@ -74,7 +74,7 @@ namespace Cipher_Multitool
         static public string SimpleSubstitutionEncode(string data, string key)
         {
             string alphabet = "abcdefghijklmnopqrstuvwxyz";
-            key = new string(key.Distinct().ToArray());
+            key = new string(key.ToLower().Distinct().ToArray());
             foreach (char c in key)
             {
                 alphabet = Regex.Replace(alphabet, c + "+", "");
@@ -109,7 +109,7 @@ namespace Cipher_Multitool
         static public string SimpleSubstitutionDecode(string data, string key)
         {
             string alphabet = "abcdefghijklmnopqrstuvwxyz";
-            key = new string(key.Distinct().ToArray());
+            key = new string(key.ToLower().Distinct().ToArray());
             foreach (char c in key)
             {
                 alphabet = Regex.Replace(alphabet, c + "+", "");
